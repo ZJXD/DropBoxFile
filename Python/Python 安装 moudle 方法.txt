@@ -12,7 +12,8 @@ http://blog.csdn.net/dajiangtai007/article/details/65632987
 调用谷歌浏览器：
 chromedriver.exe   放到谷歌安装目录
 
-
+pip安装模块，利用国内的镜像，这样安装更快
+cmd>pip install xxxx -i http://pypi.douban.com/simple/ --trusted-host pypi.douban.com
 
 
 ----------------------------------------------------------
