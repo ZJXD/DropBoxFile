@@ -96,6 +96,6 @@ for n in range(2,11):
     Hn /= 2
     print (n)
 
-print ('Total of road is %f' , Sn)
-print ('The tenth is %f meter' , Hn)
+print ('Total of road is %f' % Sn)
+print ('The tenth is %f meter' % Hn)
 

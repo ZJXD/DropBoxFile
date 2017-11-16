@@ -17,6 +17,7 @@ for line in open('./data/major_country_gdp.txt'):
 # make a square figure
 plt.figure(1, figsize=(6,6))
 
+
 # For China, make the piece explode a bit
 def explode(label, target='China'):
     if label == target: return 0.1
