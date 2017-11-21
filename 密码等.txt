@@ -20,6 +20,11 @@ IP地址：10.80.2.158
 端口：3306
 用户名/密码：szcg/szcg
 
+柯桥内网：
+server=192.168.168.5;
+user id=szcg;
+password=Password@1
+
 
 代码管理：
 http://218.108.93.243:8080/tfs/products/Techzen.SZCG/_git/Techzen.SZCG.WebAPI

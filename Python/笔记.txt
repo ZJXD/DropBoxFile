@@ -1,0 +1,5 @@
+1、在windows下使用 multiprocessing.Process ，要加上下面的：
+
+   if __name__=='__main__':
+
+并且要在 cmd 里面运行才有效果
