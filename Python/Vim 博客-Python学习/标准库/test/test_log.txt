@@ -1,0 +1,7 @@
+
+Failed:www.sina.com.cn
+Failed:www.163.com
+Failed:www.iciba.com
+Failed:www.cnblogs.com
+Failed:www.qq.com
+Failed:www.douban.com

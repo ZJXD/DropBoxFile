@@ -75,9 +75,11 @@ def doChore():
 
 # input worker
 def inputQ(queue):
-    info = str(os.getpid()) + '(put):' + time.strftime("%Y-%m-%d %H:%M:%S",time.localtime())
+    id_str = str(os.getpid())
+    info = id_str + '(put):' + time.strftime("%Y-%m-%d %H:%M:%S",time.localtime())
     queue.put(info)
     print(queue.qsize())
+    print(id_str)
 
 # output worker
 def outputQ(queue,lock):
@@ -115,3 +117,7 @@ if __name__=='__main__':
     
     for p in record2:
         p.join()
+
+
+# 这个队列相当于可以同时存几个通道，输入端一个个添加进队列，
+# 在接收端，按照先进先出的顺序一个个输出。
