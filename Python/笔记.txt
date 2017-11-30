@@ -3,3 +3,6 @@
    if __name__=='__main__':
 
 并且要在 cmd 里面运行才有效果
+
+2、Python3中使用CSV模块写入文件，会每一行出现一个空行
+   解决方法，在打开的时候多加一个“newline=''” =>> open("foo.csv","w",newline = '')
