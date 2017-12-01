@@ -14,6 +14,6 @@ s.sendall(bytes("连接上啦，哈哈哈",encoding="gb2312"))
 
 reply = s.recv(1024)
 
-print('reply is:',str(reply,encoding = "utf-8"))
+print('reply is:',str(reply,encoding = "gb2312"))
 
 s.close()

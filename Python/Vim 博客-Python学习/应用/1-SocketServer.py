@@ -2,7 +2,7 @@
 import socket
 
 # Address
-HOST = ''
+HOST = '192.168.1.237'
 PORT = 5000
 
 reply = "123"
