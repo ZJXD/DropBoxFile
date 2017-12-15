@@ -9,7 +9,7 @@ zht1015
 administrator
 aD85R^vP
 
-柯桥：21、22、28、5 密码：KQzhcg@123!@#
+柯桥：21、22、24、28、5 密码：KQzhcg@123!@#
       26、6 密码：teamax123!@#
       29 密码：QWARE:87901880
       10.1.1.201 密码 teamax123!@#
@@ -24,6 +24,8 @@ IP地址：10.80.2.158
 server=192.168.168.5;
 user id=szcg;
 password=Password@1
+
+智能分析：发布：config服务器上的不要动，其他的覆盖
 
 
 代码管理：
