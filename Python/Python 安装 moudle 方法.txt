@@ -15,6 +15,10 @@ chromedriver.exe   放到谷歌安装目录
 pip安装模块，利用国内的镜像，这样安装更快
 cmd>pip install xxxx -i http://pypi.douban.com/simple/ --trusted-host pypi.douban.com
 
+windows上安装 mysql 模块：
+下载mysql_connector_python-2.0.4-py2.py3-none-any.whl 再安装
+和mysqlclient-1.3.12-cp36-cp36m-win_amd64.whl 
+
 
 ----------------------------------------------------------
 Python GUI 的程序，在运行的时候会有命令行窗口：把 .py 改为 .pyw
