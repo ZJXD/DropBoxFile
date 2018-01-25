@@ -62,8 +62,8 @@ def pretreatmentPic(pic_name):
     for x in range(im.size[0]):
         for y in range(im.size[1]):
             pix = im.getpixel((x, y))
-            # if pix == 220 or pix == 227:
-            if pix == 220:
+            if pix == 220 or pix == 227:
+            # if pix == 220:
                 im2.putpixel((x, y), 0)
 
     # im2.show()   # 可以输出看下得到的二值图
