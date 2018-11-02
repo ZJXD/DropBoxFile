@@ -112,7 +112,9 @@ class LiaoxuefengPythonCrawler(Crawler):
         :return: url生成器
         """
         soup = BeautifulSoup(response.content, "html.parser")
-        menu_tag = soup.find_all(class_="uk-nav uk-nav-side")[1]
+        # nenus = soup.find_all(id = "uk-nav uk-nav-side")
+        nenus = soup.find(id = "x-wiki-index")
+        menu_tag = nenus[0]
         for li in menu_tag.find_all("li"):
             url = li.a.get("href")
             if not url.startswith("http"):
