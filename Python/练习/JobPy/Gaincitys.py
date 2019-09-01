@@ -8,7 +8,7 @@ from MySqlHelper import *
 
 
 # 连接MySQL数据库
-mySQLcon = MySqlHelper(user = 'root', password='zhtding', db='test')
+mySQLcon = MySqlHelper(user = 'root', password='z123456', db='test_py')
 # mySQLcon = MySqlHelper(host = 'localhost', port = 3306, user = 'root', password='zhtding', db='test', charset='utf8mb4', cursorclass = pymysql.cursors.DictCursor)
 
 # 城市数据抓取
@@ -35,26 +35,29 @@ mySQLcon = MySqlHelper(user = 'root', password='zhtding', db='test')
 
 
 # 抓取职位数据
-# def getPosition():
-#     headers={'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36'}
-#     URL = "http://sou.zhaopin.com/"
-#     print("start……")
-#     mySQLcon.connect()
-#     start_time = time.time()
-#     wbdata = requests.get(URL,headers=headers).content
-#     soup = BeautifulSoup(wbdata, 'html.parser')
-#     pos_list = soup.select(".search_content > #search_bottom_content_demo > .clearfixed")
-#     for pos in pos_list:
-#         pos_main_title = pos.select("p > a")[0].string
-#         pos_sub_titles = pos.select("h1 > a")
-#         for sub_title in pos_sub_titles:
-#             sql = "INSERT INTO position_job(station_name,main_name,sub_name) values(%s,%s,%s)"
-#             params = ["智联招聘", pos_main_title, sub_title.string]
-#             mySQLcon.onlySql(sql, params)
-#     mySQLcon.close()
-#     print("end……,use time:" + str(time.time() - start_time))
+def getPosition():
+    headers={'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36'}
+    URL = "http://sou.zhaopin.com/"
+    print("start……")
+    mySQLcon.connect()
+    start_time = time.time()
+    # wbdata = requests.get(URL,headers=headers).content
+    f = open('F:\\DropBoxFile\\Python\\练习\\JobPy\\zl.txt','r',encoding='utf-8')
+    htmlStr = f.read()
+    f.close()
+    soup = BeautifulSoup(htmlStr, 'lxml')
+    pos_list = soup.select(".zp-jobNavigater zp-main__jobnav > .zp-jobNavigater__pop--container")
+    for pos in pos_list:
+        pos_main_title = pos.select("p > a")[0].string
+        pos_sub_titles = pos.select("h1 > a")
+        for sub_title in pos_sub_titles:
+            sql = "INSERT INTO position_job(station_name,main_name,sub_name) values(%s,%s,%s)"
+            params = ["智联招聘", pos_main_title, sub_title.string]
+            mySQLcon.onlySql(sql, params)
+    mySQLcon.close()
+    print("end……,use time:" + str(time.time() - start_time))
 
-# getPosition()
+getPosition()
 
 def get_company(url):
     wbdata = requests.get(url).content
@@ -88,10 +91,10 @@ def get_zhaopin():
             print(comnames[0].string)
             com_url = comnames[0].get("href")
             get_company(com_url)
-get_zhaopin()
+# get_zhaopin()
 
 
-#主程序
+# 主程序
 # def get_zhaopin(page_):
 #     headers={'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36'}
 #     url = 'http://sou.zhaopin.com/jobs/searchresult.ashx?jl=%E6%9D%AD%E5%B7%9E&kw=%E9%87%91%E8%9E%8D&p={}&kt=3'.format(page_)
